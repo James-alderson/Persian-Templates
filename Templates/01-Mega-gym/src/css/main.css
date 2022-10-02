@@ -7,7 +7,20 @@
 4. Components
    ++ text-gray
    ++ text-red
+	 ++ bg-black-a
    ++ fs-xsmall
+	 ++ btn-menu
+	 ++ close-menu
+	 ++ btn-dropdown
+	 ++ dropdown-search
+	 ++ form-search
+5. Layout
+	 ++ logo
+	 ++ navigation-menu
+	 ++ dropdown-content
+	 ++ black-filter
+6. Breakpoints
+	 ++ lg
 
 ------------------------------ */
 /* ================
@@ -16,6 +29,7 @@
 :root {
 	--red-clr: #cf2e2e;
 	--gray-clr: #c4c4c4;
+	--black-a-clr: #0f0f0f;
 }
 
 /* ===============
@@ -37,10 +51,17 @@
    Base styles
 =============== */
 body {
+	position: relative;
 	font-family: "Shabnam", system-ui, -apple-system, "Segoe UI", Roboto,
 		"Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif,
 		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
 		"Noto Color Emoji";
+	right: 0;
+	overflow-x: hidden;
+	transition: right 0.4s ease;
+}
+body.menu-open {
+	right: -300px;
 }
 
 a {
@@ -64,7 +85,147 @@ a:focus {
 	color: var(--red-clr) !important;
 }
 
+/* ----- bg-black-a ----- */
+.bg-black-a {
+	background-color: var(--black-a-clr) !important;
+}
+
 /* ----- fs-xsmall ----- */
 .fs-xsmall {
 	font-size: 0.75rem !important;
+}
+
+/* ----- btn-menu ----- */
+.btn-menu {
+	color: var(--bs-white);
+	padding: 0;
+	border: none;
+	transition: color 0.25s ease-out;
+}
+.btn-menu:hover,
+.btn-menu:focus,
+.menu-open .open-menu {
+	color: var(--red-clr) !important;
+}
+
+/* ----- close-menu ----- */
+.close-menu {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	width: 100%;
+	text-align: right;
+	padding: 0.5rem 1.5rem;
+}
+
+/* ----- btn-dropdown ----- */
+.dropdown.active .btn-dropdown {
+	color: var(--red-clr) !important;
+}
+
+/* ----- dropdown-search ----- */
+.dropdown-search {
+	display: none;
+}
+
+/* ----- form-search ----- */
+.form-search {
+	border-color: var(--bs-gray-700);
+}
+.form-search:focus {
+	border-color: var(--bs-gray-600);
+}
+
+/* ===============
+	 Layout
+=============== */
+/* ----- logo ----- */
+.logo {
+	transition: opacity 0.3s ease-out;
+}
+.logo:hover,
+.logo:focus {
+	opacity: 0.6;
+}
+
+.logo img {
+	width: min(225px, 19vw);
+	min-width: 150px;
+	height: auto;
+}
+
+/* ----- navigation-menu ----- */
+.navigation-menu {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: -300px;
+	width: 300px;
+	z-index: 99;
+	padding-top: 4rem;
+	transition: left 0.4s ease;
+}
+.menu-open .navigation-menu {
+	left: 0;
+}
+
+.navigation-menu a {
+	font-size: 0.88rem;
+}
+
+/* ----- dropdown-content ----- */
+.dropdown-content {
+	position: absolute;
+	top: 200%;
+	left: 0;
+	min-width: 260px;
+	z-index: 9;
+	opacity: 0;
+	visibility: hidden;
+	border-top: 3px solid var(--red-clr);
+	transition: visibility 0.25s ease-out, opacity 0.3s ease-out;
+}
+.dropdown.active .dropdown-content {
+	opacity: 1;
+	visibility: visible;
+}
+
+/* ----- black-filter ----- */
+.black-filter {
+	opacity: 0;
+	visibility: hidden;
+}
+.menu-open .black-filter {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 9;
+	opacity: 1;
+	visibility: visible;
+	transition: 0.3s ease-out;
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* ===============
+	 Breakpoints
+=============== */
+/* ----- lg ----- */
+@media screen and (min-width: 992px) {
+	.navigation-menu {
+		position: static;
+		width: initial;
+		background-color: transparent !important;
+	}
+
+	.open-menu,
+	.close-menu {
+		display: none;
+	}
+
+	.dropdown-search {
+		display: block;
+	}
 }

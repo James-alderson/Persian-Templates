@@ -11,6 +11,8 @@
   <!-- Bootstrap v5.2.1 -->
   <link rel="stylesheet" href="src/css/vendors/bootstrap-5.2.1/bootstrap.rtl.min.css">
   <link rel="stylesheet" href="src/css/main.css">
+  <script src="src/js/navigation-menu.js" defer></script>
+  <script src="src/js/dropdown.js" defer></script>
   <!-- Fontawesome v6.2.0 -->
   <link rel="stylesheet" href="src/icons/fontawesome-6.2.0/css/all.min.css">
   <!-- Favicons -->
@@ -19,7 +21,7 @@
   <link rel="icon" href="src/images/favicon/favicon-16x16.png" type="image/png" sizes="16x16">
   <link rel="manifest" href="src/images/favicon/site.webmanifest">
 </head>
-<body>
+<body class="bg-dark">
 
   <header class="bg-black text-gray py-3 py-md-2">
     <div class="container-xxl px-md-5">
@@ -55,6 +57,50 @@
       </div>
     </div>
   </header>
+
+  <main>
+    <!-- Showcase -->
+    <div class="showcase py-4 px-xxl-4">
+      <div class="container-xl">
+        <!-- Navigation -->
+        <nav class="d-flex align-items-center justify-content-between">
+          <a class="logo" href="index.html">
+            <img class="d-block" src="src/images/logo.png" alt="Mega gym" width="225" height="37">
+          </a>
+          <button id="menuOpen" class="btn btn-menu open-menu">
+            <i class="fa-solid fa-bars"></i>
+            <span>منو</span>
+          </button>
+          <div class="navigation-menu d-flex flex-column flex-lg-row align-items-start gap-4 bg-black-a px-4 p-lg-0">
+            <button id="menuClose" class="btn btn-menu close-menu bg-black rounded-0">
+              <i class="fa-regular fa-circle-xmark me-1 align-middle"></i>
+              <span>بستن منو</span>
+            </button>
+            <a class="text-white text-decoration-none" href="#">خانه</a>
+            <a class="text-white text-decoration-none" href="#">مراحل کار ما</a>
+            <a class="text-white text-decoration-none" href="#">مربیان ما</a>
+            <a class="text-white text-decoration-none" href="#">اطلاعات باشگاه</a>
+            <a class="text-white text-decoration-none" href="#">طرح ها</a>
+            <a class="text-white text-decoration-none" href="#">تماس با ما</a>
+            <a class="text-white text-decoration-none" href="#">وبلاگ</a>
+            <div class="dropdown dropdown-search">
+              <button class="btn btn-menu btn-dropdown">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+              <div class="dropdown-content bg-black-a shadow p-3">
+                <form>
+                  <input id="search" class="form-control form-search bg-black-a text-white rounded-0" type="search" name="search"
+                    placeholder="جستجو">
+                </form>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </main>
+
+  <div class="black-filter"></div>
 
 </body>
 </html>
