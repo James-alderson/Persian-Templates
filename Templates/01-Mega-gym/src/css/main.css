@@ -18,6 +18,11 @@
 	 ++ form-search
 	 ++ btn-red
 	 ++ section-title
+	 ++ h-400px
+	 ++ obj-fit
+	 ++ obj-right-70
+	 ++ h-line
+	 ++ py-7
 5. Layout
 	 ++ header
 	 ++ logo
@@ -27,6 +32,7 @@
 	 ++ showcase
 	 ++ process
 	 ++ quick-info
+	 ++ trainers
 6. Breakpoints
 	 ++ sm
 	 ++ md
@@ -41,6 +47,7 @@
 	--clr-secondary: #cf2e2e;
 	--clr-gray-a: #c4c4c4;
 	--clr-gray-b: #484848;
+	--clr-gray-c: #5e5e5e;
 	--clr-black-a: #0f0f0f;
 }
 
@@ -204,6 +211,34 @@ h6 {
 	font-size: 1.63rem;
 }
 
+.h-400px {
+	height: 400px;
+}
+
+/* ----- obj-fit ----- */
+.obj-fit {
+	object-fit: cover;
+}
+
+/* ----- obj-right-70 ----- */
+.obj-right-70 {
+	object-position: 70%;
+}
+
+/* ----- h-line ----- */
+.h-line {
+	width: 50px;
+	height: 2px;
+	margin: 1.5rem auto;
+	background-color: var(--clr-gray-c);
+}
+
+/* ----- py-7 ----- */
+.py-7 {
+	padding-top: 5rem !important;
+	padding-bottom: 5rem !important;
+}
+
 /* ===============
 	 Layout
 =============== */
@@ -333,6 +368,20 @@ header a:focus {
 }
 .quick-info .col-12:last-of-type {
 	border-bottom: none;
+}
+
+/* ----- trainers ----- */
+.trainers a {
+	color: var(--bs-white);
+	text-decoration: none;
+}
+.trainers a:hover,
+.trainers a:focus {
+	color: var(--clr-secondary);
+}
+
+.trainers__name {
+	font-size: 0.85rem;
 }
 
 /* ===============
