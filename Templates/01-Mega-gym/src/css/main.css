@@ -7,7 +7,9 @@
 4. Components
    ++ clr-gray
    ++ clr-secondary
-	 ++ clr-black-a
+	 ++ bg-black-a
+	 ++ bg-primary-a
+	 ++ bg-secondary-a
    ++ fs-xsmall
 	 ++ btn-menu
 	 ++ close-menu
@@ -15,6 +17,7 @@
 	 ++ dropdown-search
 	 ++ form-search
 	 ++ btn-red
+	 ++ section-title
 5. Layout
 	 ++ header
 	 ++ logo
@@ -22,6 +25,7 @@
 	 ++ dropdown-content
 	 ++ black-filter
 	 ++ showcase
+	 ++ process
 6. Breakpoints
 	 ++ sm
 	 ++ md
@@ -32,7 +36,7 @@
    Variables
 ================ */
 :root {
-	--clr-primary: #333;
+	--clr-primary-a: #333;
 	--clr-secondary: #cf2e2e;
 	--clr-gray: #c4c4c4;
 	--clr-black-a: #0f0f0f;
@@ -74,6 +78,15 @@ a {
 	transition: color 0.25s ease-out;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 700;
+}
+
 /* ===============
    Components
 =============== */
@@ -84,12 +97,22 @@ a {
 
 /* ----- clr-secondary ----- */
 .clr-secondary {
-	color: var(--clr-secondary) !important;
+	color: var(--clr-secondary);
 }
 
-/* ----- clr-black-a ----- */
-.clr-black-a {
+/* ----- bg-black-a ----- */
+.bg-black-a {
 	background-color: var(--clr-black-a) !important;
+}
+
+/* ----- bg-primary-a ----- */
+.bg-primary-a {
+	background-color: var(--clr-primary-a) !important;
+}
+
+/* ----- bg-secondary-a ----- */
+.bg-secondary-a {
+	background-color: var(--clr-secondary);
 }
 
 /* ----- fs-xsmall ----- */
@@ -172,6 +195,11 @@ a {
 	color: var(--bs-white);
 	border-color: #dc3545;
 	background-color: #dc3545;
+}
+
+/* ----- section-title ----- */
+.section-title {
+	font-size: 1.63rem;
 }
 
 /* ===============
@@ -280,6 +308,23 @@ header a:focus {
 	margin: 0 auto 1.5rem auto;
 }
 
+/* ----- process ----- */
+.process__content {
+	border-color: #484848 !important;
+	transition: box-shadow 0.3s ease-out;
+}
+.process__content:hover .process__icon {
+	transform: scale(0.9);
+}
+.process__content:hover {
+	box-shadow: none !important;
+}
+
+.process__icon {
+	width: 82px;
+	transition: transform 0.25s ease-out;
+}
+
 /* ===============
 	 Breakpoints
 =============== */
@@ -287,6 +332,10 @@ header a:focus {
 @media screen and (min-width: 576px) {
 	.showcase__title {
 		font-size: min(4.38rem, 6vw);
+	}
+
+	.section-title {
+		font-size: min(2.5rem, 4.5vw);
 	}
 }
 /* ----- md ----- */
