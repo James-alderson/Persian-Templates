@@ -23,6 +23,8 @@
 	 ++ obj-right-70
 	 ++ h-line
 	 ++ py-7
+	 ++ obj-left
+	 ++ fs-small
 5. Layout
 	 ++ header
 	 ++ logo
@@ -33,6 +35,7 @@
 	 ++ process
 	 ++ quick-info
 	 ++ trainers
+	 ++ comments
 6. Breakpoints
 	 ++ sm
 	 ++ md
@@ -239,6 +242,16 @@ h6 {
 	padding-bottom: 5rem !important;
 }
 
+/* ----- obj-left ----- */
+.obj-left {
+	object-position: left;
+}
+
+/* ----- fs-small ----- */
+.fs-small {
+	font-size: 0.85rem;
+}
+
 /* ===============
 	 Layout
 =============== */
@@ -342,7 +355,6 @@ header a:focus {
 
 .showcase__description {
 	max-width: 420px;
-	margin: 0 auto 1.5rem auto;
 }
 
 /* ----- process ----- */
@@ -380,8 +392,20 @@ header a:focus {
 	color: var(--clr-secondary);
 }
 
-.trainers__name {
-	font-size: 0.85rem;
+/* ----- comments ----- */
+.comments {
+	background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.5)),
+		url(../images/main/customers_comments-bg.jpeg) no-repeat center/cover;
+}
+
+.comments__img {
+	width: 100px;
+	height: 100px;
+	border: 3px solid var(--clr-secondary);
+}
+
+.comments__text {
+	max-width: 690px;
 }
 
 /* ===============
