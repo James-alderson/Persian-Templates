@@ -5,21 +5,26 @@
    ++ Shabnam
 3. Base styles
 4. Components
-   ++ text-gray
-   ++ text-red
-	 ++ bg-black-a
+   ++ clr-gray
+   ++ clr-secondary
+	 ++ clr-black-a
    ++ fs-xsmall
 	 ++ btn-menu
 	 ++ close-menu
 	 ++ btn-dropdown
 	 ++ dropdown-search
 	 ++ form-search
+	 ++ btn-red
 5. Layout
+	 ++ header
 	 ++ logo
 	 ++ navigation-menu
 	 ++ dropdown-content
 	 ++ black-filter
+	 ++ showcase
 6. Breakpoints
+	 ++ sm
+	 ++ md
 	 ++ lg
 
 ------------------------------ */
@@ -27,9 +32,10 @@
    Variables
 ================ */
 :root {
-	--red-clr: #cf2e2e;
-	--gray-clr: #c4c4c4;
-	--black-a-clr: #0f0f0f;
+	--clr-primary: #333;
+	--clr-secondary: #cf2e2e;
+	--clr-gray: #c4c4c4;
+	--clr-black-a: #0f0f0f;
 }
 
 /* ===============
@@ -67,27 +73,23 @@ body.menu-open {
 a {
 	transition: color 0.25s ease-out;
 }
-a:hover,
-a:focus {
-	color: var(--red-clr) !important;
-}
 
 /* ===============
    Components
 =============== */
-/* ----- text-gray ----- */
-.text-gray {
-	color: var(--gray-clr) !important;
+/* ----- clr-gray ----- */
+.clr-gray {
+	color: var(--clr-gray);
 }
 
-/* ----- text-red ----- */
-.text-red {
-	color: var(--red-clr) !important;
+/* ----- clr-secondary ----- */
+.clr-secondary {
+	color: var(--clr-secondary) !important;
 }
 
-/* ----- bg-black-a ----- */
-.bg-black-a {
-	background-color: var(--black-a-clr) !important;
+/* ----- clr-black-a ----- */
+.clr-black-a {
+	background-color: var(--clr-black-a) !important;
 }
 
 /* ----- fs-xsmall ----- */
@@ -105,7 +107,7 @@ a:focus {
 .btn-menu:hover,
 .btn-menu:focus,
 .menu-open .open-menu {
-	color: var(--red-clr) !important;
+	color: var(--clr-secondary) !important;
 }
 
 /* ----- close-menu ----- */
@@ -121,7 +123,7 @@ a:focus {
 
 /* ----- btn-dropdown ----- */
 .dropdown.active .btn-dropdown {
-	color: var(--red-clr) !important;
+	color: var(--clr-secondary) !important;
 }
 
 /* ----- dropdown-search ----- */
@@ -137,9 +139,50 @@ a:focus {
 	border-color: var(--bs-gray-600);
 }
 
+/* ----- btn-red ----- */
+.btn-red {
+	color: var(--bs-white);
+	border-color: #dc3545;
+	background-color: #dc3545;
+}
+.btn-red:first-child:hover,
+:not(.btn-check) + .btn-red:hover {
+	color: #dc3545;
+	border-color: #b02a37;
+	background-color: var(--bs-white);
+}
+.btn-check:checked + .btn-red,
+.btn-red.active,
+.btn-red.show,
+.btn-red:first-child:active,
+:not(.btn-check) + .btn-red:active {
+	color: #aa0010;
+	border-color: #a52834;
+	background-color: #c6c7c8;
+}
+.btn-red:focus-visible {
+	color: #aa0010;
+	outline: 0;
+	border-color: #b02a37;
+	background-color: #d3d4d5;
+	box-shadow: 0 0 0 0.25rem rgba(255, 83, 97, 0.5);
+}
+.btn-red:disabled,
+.btn-red.disabled {
+	color: var(--bs-white);
+	border-color: #dc3545;
+	background-color: #dc3545;
+}
+
 /* ===============
 	 Layout
 =============== */
+/* ----- header ----- */
+header a:hover,
+header a:focus {
+	color: var(--clr-secondary);
+}
+
 /* ----- logo ----- */
 .logo {
 	transition: opacity 0.3s ease-out;
@@ -171,7 +214,13 @@ a:focus {
 }
 
 .navigation-menu a {
+	color: var(--bs-white);
 	font-size: 0.88rem;
+	text-decoration: none;
+}
+.navigation-menu a:hover,
+.navigation-menu a:focus {
+	color: var(--clr-secondary);
 }
 
 /* ----- dropdown-content ----- */
@@ -183,7 +232,7 @@ a:focus {
 	z-index: 9;
 	opacity: 0;
 	visibility: hidden;
-	border-top: 3px solid var(--red-clr);
+	border-top: 3px solid var(--clr-secondary);
 	transition: visibility 0.25s ease-out, opacity 0.3s ease-out;
 }
 .dropdown.active .dropdown-content {
@@ -193,25 +242,59 @@ a:focus {
 
 /* ----- black-filter ----- */
 .black-filter {
-	opacity: 0;
-	visibility: hidden;
-}
-.menu-open .black-filter {
 	position: fixed;
 	top: 0;
 	bottom: 0;
 	left: 0;
 	right: 0;
 	z-index: 9;
+	opacity: 0;
+	visibility: hidden;
+	transition: 0.3s ease-out;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+.menu-open .black-filter {
 	opacity: 1;
 	visibility: visible;
-	transition: 0.3s ease-out;
-	background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* ----- showcase ----- */
+.showcase {
+	height: calc(100vh - 82px);
+	background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.5)),
+		url(../images/main/showcase-bg.jpg) no-repeat 45% 10% / cover;
+}
+
+.showcase__title {
+	font-size: 2.13rem;
+}
+
+.showcase__content {
+	position: relative;
+	top: 50%;
+	transform: translateY(calc(-50% - 25px));
+}
+
+.showcase__description {
+	max-width: 420px;
+	margin: 0 auto 1.5rem auto;
 }
 
 /* ===============
 	 Breakpoints
 =============== */
+/* ----- sm ----- */
+@media screen and (min-width: 576px) {
+	.showcase__title {
+		font-size: min(4.38rem, 6vw);
+	}
+}
+/* ----- md ----- */
+@media screen and (min-width: 768px) {
+	.showcase {
+		height: calc(100vh - 40px);
+	}
+}
 /* ----- lg ----- */
 @media screen and (min-width: 992px) {
 	.navigation-menu {
