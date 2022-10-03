@@ -26,6 +26,7 @@
 	 ++ black-filter
 	 ++ showcase
 	 ++ process
+	 ++ quick-info
 6. Breakpoints
 	 ++ sm
 	 ++ md
@@ -38,7 +39,8 @@
 :root {
 	--clr-primary-a: #333;
 	--clr-secondary: #cf2e2e;
-	--clr-gray: #c4c4c4;
+	--clr-gray-a: #c4c4c4;
+	--clr-gray-b: #484848;
 	--clr-black-a: #0f0f0f;
 }
 
@@ -92,7 +94,7 @@ h6 {
 =============== */
 /* ----- clr-gray ----- */
 .clr-gray {
-	color: var(--clr-gray);
+	color: var(--clr-gray-a);
 }
 
 /* ----- clr-secondary ----- */
@@ -310,7 +312,7 @@ header a:focus {
 
 /* ----- process ----- */
 .process__content {
-	border-color: #484848 !important;
+	border-color: var(--clr-gray-b) !important;
 	transition: box-shadow 0.3s ease-out;
 }
 .process__content:hover .process__icon {
@@ -325,6 +327,14 @@ header a:focus {
 	transition: transform 0.25s ease-out;
 }
 
+/* ----- quick-info ----- */
+.quick-info .col-12 {
+	border-bottom: 1px solid var(--clr-gray-b);
+}
+.quick-info .col-12:last-of-type {
+	border-bottom: none;
+}
+
 /* ===============
 	 Breakpoints
 =============== */
@@ -336,6 +346,12 @@ header a:focus {
 
 	.section-title {
 		font-size: min(2.5rem, 4.5vw);
+	}
+
+	.quick-info .col-12:first-of-type,
+	.quick-info .col-12:nth-of-type(3),
+	.quick-info .col-12:last-of-type {
+		border-left: 1px solid var(--clr-gray-b);
 	}
 }
 /* ----- md ----- */
@@ -359,5 +375,16 @@ header a:focus {
 
 	.dropdown-search {
 		display: block;
+	}
+
+	.quick-info .col-12 {
+		border-bottom: none;
+	}
+	.quick-info .col-12:nth-of-type(2),
+	.quick-info .col-12:nth-of-type(4) {
+		border-left: 1px solid var(--clr-gray-b);
+	}
+	.quick-info .col-12:last-of-type {
+		border-left: none;
 	}
 }
