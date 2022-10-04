@@ -5,8 +5,9 @@
    ++ Shabnam
 3. Base styles
 4. Components
-   ++ clr-gray
-   ++ clr-secondary
+   ++ clr-gray-a
+   ++ clr-secondary-a
+   ++ clr-secondary-b
 	 ++ bg-black-a
 	 ++ bg-primary-a
 	 ++ bg-secondary-a
@@ -30,6 +31,7 @@
 	 ++ fs-small
 	 ++ mt-6
 	 ++ shadow-text-sm
+	 ++ pt-250px
 5. Layout
 	 ++ header
 	 ++ logo
@@ -41,6 +43,7 @@
 	 ++ quick-info
 	 ++ trainers
 	 ++ comments
+	 ++ text-over-image
 6. Breakpoints
 	 ++ sm
 	 ++ md
@@ -53,7 +56,7 @@
 :root {
 	--clr-primary-a: hsl(0, 0%, 20%);
 	--clr-secondary-a: hsl(0, 64%, 50%);
-	--clr-secondary-b: hsl(356, 83%, 57%); /*hsl(0, 100%, 70.8%)*/
+	--clr-secondary-b: hsl(356, 83%, 57%);
 	--clr-gray-a: hsl(0, 0%, 77%);
 	--clr-gray-b: hsl(0, 0%, 28%);
 	--clr-gray-c: hsl(0, 0%, 37%);
@@ -108,14 +111,19 @@ h6 {
 /* ===============
    Components
 =============== */
-/* ----- clr-gray ----- */
-.clr-gray {
+/* ----- clr-gray-a ----- */
+.clr-gray-a {
 	color: var(--clr-gray-a);
 }
 
-/* ----- clr-secondary ----- */
-.clr-secondary {
+/* ----- clr-secondary-a ----- */
+.clr-secondary-a {
 	color: var(--clr-secondary-a);
+}
+
+/* ----- clr-secondary-b ----- */
+.clr-secondary-b {
+	color: var(--clr-secondary-b);
 }
 
 /* ----- bg-black-a ----- */
@@ -343,6 +351,11 @@ h6 {
 	text-shadow: 0 0.1rem rgba(0, 0, 0, 0.15) !important;
 }
 
+/* ----- pt-250px ----- */
+.pt-250px {
+	padding-top: 250px !important;
+}
+
 /* ===============
 	 Layout
 =============== */
@@ -497,6 +510,12 @@ header a:focus {
 
 .comments__text {
 	max-width: 690px;
+}
+
+/* ----- text-over-image ----- */
+.text-over-image {
+	background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.5)),
+		url(../images/main/section_a-bg.jpg) no-repeat center/cover;
 }
 
 /* ===============
