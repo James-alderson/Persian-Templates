@@ -21,6 +21,7 @@
 	 ++ btn-red
 	 ++ btn-black
 	 ++ btn-white
+	 ++ btn-iframe
 	 ++ section-title
 	 ++ h-400px
 	 ++ obj-fit
@@ -44,6 +45,7 @@
 	 ++ trainers
 	 ++ comments
 	 ++ text-over-image
+	 ++ location
 6. Breakpoints
 	 ++ sm
 	 ++ md
@@ -298,6 +300,14 @@ h6 {
 	background-color: #212529;
 }
 
+/* ----- btn-iframe ----- */
+.btn-iframe {
+	position: absolute;
+	bottom: 20%;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
 /* ----- section-title ----- */
 .section-title {
 	font-size: 1.63rem;
@@ -516,6 +526,21 @@ header a:focus {
 .text-over-image {
 	background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.5)),
 		url(../images/main/section_a-bg.jpg) no-repeat center/cover;
+}
+
+/* ----- location ----- */
+.location {
+	position: relative;
+	height: 300px;
+	line-height: 0;
+	background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.5)),
+		url(../images/location/hamyarwp.png) no-repeat center/cover;
+}
+
+.location iframe {
+	width: 100%;
+	height: 100%;
+	border: none;
 }
 
 /* ===============
