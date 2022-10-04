@@ -18,6 +18,8 @@
 	 ++ dropdown-search
 	 ++ form-search
 	 ++ btn-red
+	 ++ btn-black
+	 ++ btn-white
 	 ++ section-title
 	 ++ h-400px
 	 ++ obj-fit
@@ -51,7 +53,7 @@
 :root {
 	--clr-primary-a: hsl(0, 0%, 20%);
 	--clr-secondary-a: hsl(0, 64%, 50%);
-	--clr-secondary-b: hsl(356, 83%, 57%);
+	--clr-secondary-b: hsl(356, 83%, 57%); /*hsl(0, 100%, 70.8%)*/
 	--clr-gray-a: hsl(0, 0%, 77%);
 	--clr-gray-b: hsl(0, 0%, 28%);
 	--clr-gray-c: hsl(0, 0%, 37%);
@@ -216,6 +218,76 @@ h6 {
 	color: var(--bs-white);
 	border-color: #dc3545;
 	background-color: #dc3545;
+}
+
+/* ----- btn-black ----- */
+.btn-black {
+	color: #dc3545;
+	border-color: #212529;
+	background-color: #212529;
+}
+.btn-black:first-child:hover,
+:not(.btn-check) + .btn-black:hover {
+	color: var(--bs-white);
+	border-color: #b02a37;
+	background-color: #dc3545;
+}
+.btn-check:checked + .btn-black,
+.btn-black.active,
+.btn-black.show,
+.btn-black:first-child:active,
+:not(.btn-check) + .btn-black:active {
+	color: var(--bs-white);
+	border-color: #a52834;
+	background-color: #b02a37;
+}
+.btn-black:focus-visible {
+	color: var(--bs-white);
+	outline: 0;
+	border-color: #b02a37;
+	background-color: #bb2d3b;
+	box-shadow: 0 0 0 0.25rem rgba(225, 83, 97, 0.5);
+}
+.btn-black:disabled,
+.btn-black.disabled {
+	color: #dc3545;
+	border-color: #212529;
+	background-color: #212529;
+}
+
+/* ----- btn-white ----- */
+.btn-white {
+	color: #dc3545;
+	border-color: #f8f9fa;
+	background-color: #f8f9fa;
+}
+.btn-white:first-child:hover,
+:not(.btn-check) + .btn-white:hover {
+	color: var(--bs-white);
+	border-color: #373b3e;
+	background-color: #424649;
+}
+.btn-check:checked + .btn-white,
+.btn-white.active,
+.btn-white.show,
+.btn-white:first-child:active,
+:not(.btn-check) + .btn-white:active {
+	color: var(--bs-white);
+	border-color: #373b3e;
+	background-color: #4d5154;
+}
+.btn-white:focus-visible {
+	color: var(--bs-white);
+	outline: 0;
+	border-color: #373b3e;
+	background-color: #424649;
+	box-shadow: 0 0 0 0.25rem rgba(66, 70, 73, 0.5);
+}
+.btn-white:disabled,
+.btn-white.disabled {
+	color: #dc3545;
+	border-color: #212529;
+	background-color: #212529;
 }
 
 /* ----- section-title ----- */
