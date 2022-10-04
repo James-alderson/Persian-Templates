@@ -17,7 +17,7 @@
 	 ++ close-menu
 	 ++ btn-dropdown
 	 ++ dropdown-search
-	 ++ form-search
+	 ++ border-gray
 	 ++ btn-red
 	 ++ btn-black
 	 ++ btn-white
@@ -185,11 +185,11 @@ h6 {
 	display: none;
 }
 
-/* ----- form-search ----- */
-.form-search {
+/* ----- border-gray ----- */
+.border-gray {
 	border-color: var(--bs-gray-700);
 }
-.form-search:focus {
+.border-gray:focus {
 	border-color: var(--bs-gray-600);
 }
 

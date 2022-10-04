@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="fa-IR" dir="rtl">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,7 +22,6 @@
   <link rel="icon" href="src/images/favicon/favicon-16x16.png" type="image/png" sizes="16x16">
   <link rel="manifest" href="src/images/favicon/site.webmanifest">
 </head>
-
 <body class="bg-primary-a text-white">
 
   <header class="bg-black-a clr-gray-a py-3 py-md-2">
@@ -84,7 +82,7 @@
             <a href="#trainers">مربیان ما</a>
             <a href="#facts">اطلاعات باشگاه</a>
             <a href="#pricing">طرح ها</a>
-            <a href="#">تماس با ما</a>
+            <a href="#contact">تماس با ما</a>
             <a href="#">وبلاگ</a>
             <div class="dropdown dropdown-search">
               <button class="btn btn-menu btn-dropdown">
@@ -92,7 +90,7 @@
               </button>
               <div class="dropdown-content bg-black-a shadow p-3">
                 <form>
-                  <input id="search" class="form-control form-search bg-black-a text-white rounded-0" type="search"
+                  <input id="search" class="form-control border-gray bg-black-a text-white rounded-0" type="search"
                     name="search" placeholder="جستجو">
                 </form>
               </div>
@@ -387,6 +385,47 @@
         </div>
       </div>
     </div>
+    <!-- Contact -->
+    <section id="contact" class="px-4 py-7">
+      <div class="container-xl">
+        <h2 class="section-title mb-3">با ما در تماس باش !</h2>
+        <div class="row mt-5">
+          <div class="col-12 col-sm-7 col-lg my-3">
+            <form>
+              <div class="mb-3">
+                <input id="name" class="form-control bg-black-a text-white border-gray" type="text" name="name"
+                  placeholder="نام شما" required>
+              </div>
+              <div class="mb-3">
+                <input id="email" class="form-control bg-black-a text-white border-gray text-start" type="email"
+                  name="email" placeholder="ایمیل شما" required>
+              </div>
+              <div class="mb-3">
+                <textarea id="message" class="form-control bg-black-a text-white border-gray" name="message" rows="6"
+                  placeholder="پیام شما" required></textarea>
+              </div>
+              <button class="btn btn-danger rounded-pill px-3" type="submit">ارسال پیام</button>
+            </form>
+          </div>
+          <div class="col-12 col-sm-5 col-lg my-3">
+            <div class="d-flex flex-column align-items-center text-center gap-5">
+              <div>
+                <i class="fa-solid fa-location-dot clr-secondary-b fa-2x"></i>
+                <div class="mt-2">تهران ، همیار وردپرس</div>
+              </div>
+              <div>
+                <i class="fa-solid fa-phone clr-secondary-b fa-2x"></i>
+                <div class="mt-2">02174553000</div>
+              </div>
+              <div>
+                <i class="fa-solid fa-envelope clr-secondary-b fa-2x"></i>
+                <div class="mt-2">hamyarwp@gmail.com</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <div class="black-filter"></div>
