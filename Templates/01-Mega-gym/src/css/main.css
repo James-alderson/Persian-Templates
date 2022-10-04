@@ -6,18 +6,21 @@
 3. Base styles
 4. Components
    ++ clr-gray-a
+	 ++ clr-gray-d
    ++ clr-secondary-a
    ++ clr-secondary-b
 	 ++ bg-black-a
 	 ++ bg-primary-a
 	 ++ bg-secondary-a
 	 ++ bg-secondary-b
+	 ++ br-gray-a
+	 ++ br-gray-b
+	 ++ br-secondary-b
    ++ fs-xsmall
 	 ++ btn-menu
 	 ++ close-menu
 	 ++ btn-dropdown
 	 ++ dropdown-search
-	 ++ border-gray
 	 ++ btn-red
 	 ++ btn-black
 	 ++ btn-white
@@ -46,6 +49,8 @@
 	 ++ comments
 	 ++ text-over-image
 	 ++ location
+	 ++ footer
+	 ++ gallery
 6. Breakpoints
 	 ++ sm
 	 ++ md
@@ -62,6 +67,7 @@
 	--clr-gray-a: hsl(0, 0%, 77%);
 	--clr-gray-b: hsl(0, 0%, 28%);
 	--clr-gray-c: hsl(0, 0%, 37%);
+	--clr-gray-d: hsl(0, 0%, 67%);
 	--clr-black-a: hsl(0, 0%, 6%);
 }
 
@@ -116,6 +122,11 @@ h6 {
 /* ----- clr-gray-a ----- */
 .clr-gray-a {
 	color: var(--clr-gray-a);
+}
+
+/* ----- clr-gray-d ----- */
+.clr-gray-d {
+	color: var(--clr-gray-d);
 }
 
 /* ----- clr-secondary-a ----- */
@@ -187,12 +198,22 @@ h6 {
 	display: none;
 }
 
-/* ----- border-gray ----- */
-.border-gray {
+/* ----- br-gray-a ----- */
+.br-gray-a {
 	border-color: var(--bs-gray-700);
 }
-.border-gray:focus {
+.br-gray-a:focus {
 	border-color: var(--bs-gray-600);
+}
+
+/* ----- br-gray-b ----- */
+.br-gray-b {
+	border-color: var(--clr-gray-b) !important;
+}
+
+/* ----- br-secondary-b ----- */
+.br-secondary-b {
+	border-color: var(--clr-secondary-b) !important;
 }
 
 /* ----- btn-red ----- */
@@ -543,6 +564,34 @@ header a:focus {
 	border: none;
 }
 
+/* ----- footer ----- */
+footer a {
+	color: var(--bs-white);
+	text-decoration: none;
+}
+footer a:hover,
+footer a:focus {
+	color: var(--clr-secondary-a);
+}
+
+/* ----- gallery ----- */
+.gallery {
+	display: grid;
+	gap: 0.5rem;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.gallery img {
+	height: min(150px, 27vw);
+	min-height: 130px;
+	transition: border-radius 0.25s ease-out;
+}
+.gallery img:hover,
+.gallery img:focus {
+	border-top-left-radius: 1rem;
+	border-bottom-right-radius: 1rem;
+}
+
 /* ===============
 	 Breakpoints
 =============== */
@@ -561,11 +610,20 @@ header a:focus {
 	.quick-info .col-12:last-of-type {
 		border-left: 1px solid var(--clr-gray-b);
 	}
+
+	.gallery {
+		grid-template-columns: repeat(3, 1fr);
+	}
 }
 /* ----- md ----- */
 @media screen and (min-width: 768px) {
 	.showcase {
 		height: calc(100vh - 40px);
+	}
+
+	.gallery img {
+		height: min(142px, 15vw);
+		min-height: 105px;
 	}
 }
 /* ----- lg ----- */
@@ -594,5 +652,10 @@ header a:focus {
 	}
 	.quick-info .col-12:last-of-type {
 		border-left: none;
+	}
+
+	.gallery img {
+		height: min(95px, 6.8vw);
+		min-height: 65px;
 	}
 }
