@@ -24,7 +24,7 @@
   "bugs": {
     "url": "https://github.com/James-alderson/Persian-Templates/issues"
   },
-  "homepage": "https://github.com/James-alderson/Persian-Templates#readme",
+  "homepage": "https://github.com/James-alderson/Persian-Templates/tree/main/Templates/01-Mega-gym#readme",
   "devDependencies": {
     "autoprefixer": "^10.4.12",
     "browser-sync": "^2.27.10",
