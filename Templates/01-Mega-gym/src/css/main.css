@@ -557,7 +557,7 @@ header a i {
 			var(--clr-black-filter-a),
 			var(--clr-black-filter-b)
 		),
-		url(../images/main/customers_comments-bg.jpeg) no-repeat center/cover;
+		url(../images/main/customers_comments-bg.jpg) no-repeat center/cover;
 }
 
 .comments__img {
