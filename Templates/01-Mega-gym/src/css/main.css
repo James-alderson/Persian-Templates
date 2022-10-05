@@ -200,6 +200,7 @@ h6 {
 }
 .btn-menu:hover,
 .btn-menu:focus,
+.btn-menu:active,
 .menu-open .open-menu {
 	color: var(--clr-secondary-a) !important;
 }
@@ -466,7 +467,8 @@ header a i {
 	text-decoration: none;
 }
 .navigation-menu a:hover,
-.navigation-menu a:focus {
+.navigation-menu a:focus,
+.navigation-menu a:active {
 	color: var(--clr-secondary-a);
 }
 
