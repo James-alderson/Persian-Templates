@@ -18,5 +18,5 @@ function toggle_class() {
 }
 
 function scroll_top() {
-  window.scrollTo({ top: 0, behavior: "smooth" })
+  window.scrollTo({ top: 0 })
 }

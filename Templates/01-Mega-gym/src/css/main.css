@@ -57,6 +57,7 @@
 	 ++ large
 	 ++ x-large
 	 ++ xx-large
+7. Reduced-motion
 
 ------------------------------ */
 /* ================
@@ -731,5 +732,22 @@ footer a:focus {
 @media screen and (min-width: 1400px) {
 	.container-header {
 		max-width: 1336px;
+	}
+}
+
+/* ===============
+	 Reduced-motion
+=============== */
+@media (prefers-reduced-motion: reduce) {
+	*,
+	::before,
+	::after {
+		animation-delay: -1ms !important;
+		animation-duration: 1ms !important;
+		animation-iteration-count: 1 !important;
+		background-attachment: initial !important;
+		scroll-behavior: auto !important;
+		transition-duration: 0s !important;
+		transition-delay: 0s !important;
 	}
 }
