@@ -62,6 +62,12 @@ function copyIcon_task() {
     .pipe(dest("dist/icons"))
 }
 
+// CopyImage
+function copyImage_task() {
+  return src("src/images/screenshot/*", { base: "src/images" })
+    .pipe(dest("dist/images"))
+}
+
 /* Font task 
   1. Convert ttf format to woff
 ============ */
@@ -116,7 +122,7 @@ function watch_task() {
 }
 
 // Gulp default task
-exports.default = series(parallel(css_task, js_task), cachebust_task, font_task, copyCss_task, copyIcon_task, imagemin_task, watch_task)
+exports.default = series(parallel(css_task, js_task), cachebust_task, font_task, copyCss_task, copyIcon_task, copyImage_task, imagemin_task, watch_task)
 
 // Run browserSync
-exports.bs = series(parallel(css_task, js_task), cachebust_task, font_task, copyCss_task, copyIcon_task, imagemin_task, browserSync, browserSyncWatch)
+exports.bs = series(parallel(css_task, js_task), cachebust_task, font_task, copyCss_task, copyIcon_task, copyImage_task, imagemin_task, browserSync, browserSyncWatch)
