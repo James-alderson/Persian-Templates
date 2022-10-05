@@ -36,6 +36,7 @@
 	 ++ mt-6
 	 ++ shadow-text-sm
 	 ++ pt-250px
+	 ++ btn-scroll
 5. Layout
 	 ++ header
 	 ++ logo
@@ -385,6 +386,33 @@ h6 {
 /* ----- pt-250px ----- */
 .pt-250px {
 	padding-top: 250px !important;
+}
+
+/* ----- btn-scroll ----- */
+.btn-scroll {
+	position: fixed;
+	bottom: 20px;
+	left: 20px;
+	padding: 7px 12px;
+	z-index: 5;
+	opacity: 0;
+	visibility: hidden;
+	border-color: transparent !important;
+	background-color: hsl(219, 83%, 57%) !important;
+	transition: visibility 0.25s ease-out, opacity 0.3s ease-out, left 0.4s ease;
+}
+.menu-open .btn-scroll {
+	left: 320px;
+}
+
+.btn-scroll.show {
+	opacity: 0.5;
+	visibility: visible;
+}
+.btn-scroll.show:hover,
+.btn-scroll.show:focus,
+.btn-scroll.show:active {
+	opacity: 1;
 }
 
 /* ===============
