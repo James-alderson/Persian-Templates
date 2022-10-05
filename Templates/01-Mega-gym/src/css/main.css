@@ -83,12 +83,12 @@
 @font-face {
 	font-family: "Shabnam";
 	font-weight: 700;
-	src: url(../fonts/Shabnam/Shabnam-Bold-FD.ttf);
+	src: url(../fonts/Shabnam/Shabnam-Bold-FD.woff);
 }
 @font-face {
 	font-family: "Shabnam";
 	font-weight: 300;
-	src: url(../fonts/Shabnam/Shabnam-Light-FD.ttf);
+	src: url(../fonts/Shabnam/Shabnam-Light-FD.woff);
 }
 
 /* ===============
